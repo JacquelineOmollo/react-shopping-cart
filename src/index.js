@@ -4,13 +4,16 @@ import { BrowserRouter as Router, withRouter } from "react-router-dom";
 import "./sass/index.scss";
 import App from "./App";
 import { ProductProvider } from "./contexts/ProductContext";
+import { CartProvider } from "./contexts/CartContext";
 const AppWithRouter = withRouter(App);
 
 ReactDOM.render(
   <ProductProvider>
-    <Router>
-      <AppWithRouter />
-    </Router>
+    <CartProvider>
+      <Router>
+        <AppWithRouter />
+      </Router>
+    </CartProvider>
   </ProductProvider>,
   document.getElementById("root")
 );
